@@ -16,7 +16,6 @@ export default function AccessRequestForm() {
       organization: formData.get("organization"),
       role: formData.get("role"),
       email: formData.get("email"),
-      aum: formData.get("aum"),
       message: formData.get("message"),
     };
 
@@ -40,11 +39,17 @@ export default function AccessRequestForm() {
   };
 
   const buttonText = {
-    idle: "Submit Request",
-    submitting: "Submitting…",
-    success: "Request Received",
+    idle: "Request Access",
+    submitting: "Submitting\u2026",
+    success: "Received. Zac will be in touch.",
     error: "Retry Submission",
   };
+
+  const inputClass =
+    "font-[family-name:var(--font-mono)] text-[var(--text-mono)] text-[var(--color-text-primary)] bg-transparent border border-[var(--color-divider)] rounded-[var(--radius-input)] px-[var(--space-16)] py-[var(--space-12)] w-full focus:outline-none focus:border-[var(--color-accent)] transition-colors duration-200 placeholder:text-[var(--color-text-secondary)]";
+
+  const labelClass =
+    "font-[family-name:var(--font-body)] text-[var(--text-caption)] font-medium tracking-[0.04em] uppercase text-[var(--color-text-secondary)]";
 
   return (
     <section id="access-request" className="form-section">
@@ -56,129 +61,123 @@ export default function AccessRequestForm() {
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
         >
-          <span className="thesis-eyebrow">
-            Access Request
-          </span>
-          <h2 className="thesis-heading">
-            Request Institutional Access
-          </h2>
-          <p className="form-lede">
-            AEGIS II is not publicly available. Access is extended by invitation or direct application. Complete the form below to initiate a review.
-          </p>
-
-          <form onSubmit={handleSubmit} className="flex flex-col">
-            <div className="flex flex-col gap-[var(--space-8)] mb-[var(--space-24)]">
-              <label htmlFor="name" className="font-[family-name:var(--font-body)] text-[var(--text-caption)] font-medium tracking-[0.04em] uppercase text-[var(--color-text-secondary)]">
-                Full Name
-              </label>
-              <input
-                id="name"
-                type="text"
-                name="name"
-                required
-                placeholder="First Last"
-                autoComplete="name"
-                className="w-full bg-transparent text-[var(--color-text-primary)] font-[family-name:var(--font-mono)] text-[var(--text-body)] leading-[var(--text-body-lh)] border border-[var(--color-divider)] rounded-[var(--radius-input)] px-[var(--space-16)] py-[var(--space-12)] outline-2 outline-transparent outline-offset-1 transition-all duration-150 ease-[var(--ease-out)] focus-visible:border-[var(--color-accent)] focus-visible:outline-[var(--color-focus)] placeholder:text-[var(--color-text-secondary)] placeholder:opacity-50"
-              />
-            </div>
-
-            <div className="flex flex-col gap-[var(--space-8)] mb-[var(--space-24)]">
-              <label htmlFor="organization" className="font-[family-name:var(--font-body)] text-[var(--text-caption)] font-medium tracking-[0.04em] uppercase text-[var(--color-text-secondary)]">
-                Organization
-              </label>
-              <input
-                id="organization"
-                type="text"
-                name="organization"
-                required
-                placeholder="Firm or Institution"
-                autoComplete="organization"
-                className="w-full bg-transparent text-[var(--color-text-primary)] font-[family-name:var(--font-mono)] text-[var(--text-body)] leading-[var(--text-body-lh)] border border-[var(--color-divider)] rounded-[var(--radius-input)] px-[var(--space-16)] py-[var(--space-12)] outline-2 outline-transparent outline-offset-1 transition-all duration-150 ease-[var(--ease-out)] focus-visible:border-[var(--color-accent)] focus-visible:outline-[var(--color-focus)] placeholder:text-[var(--color-text-secondary)] placeholder:opacity-50"
-              />
-            </div>
-
-            <div className="flex flex-col gap-[var(--space-8)] mb-[var(--space-24)]">
-              <label htmlFor="role" className="font-[family-name:var(--font-body)] text-[var(--text-caption)] font-medium tracking-[0.04em] uppercase text-[var(--color-text-secondary)]">
-                Role
-              </label>
-              <input
-                id="role"
-                type="text"
-                name="role"
-                required
-                placeholder="e.g. Managing Director, CIO"
-                className="w-full bg-transparent text-[var(--color-text-primary)] font-[family-name:var(--font-mono)] text-[var(--text-body)] leading-[var(--text-body-lh)] border border-[var(--color-divider)] rounded-[var(--radius-input)] px-[var(--space-16)] py-[var(--space-12)] outline-2 outline-transparent outline-offset-1 transition-all duration-150 ease-[var(--ease-out)] focus-visible:border-[var(--color-accent)] focus-visible:outline-[var(--color-focus)] placeholder:text-[var(--color-text-secondary)] placeholder:opacity-50"
-              />
-            </div>
-
-            <div className="flex flex-col gap-[var(--space-8)] mb-[var(--space-24)]">
-              <label htmlFor="email" className="font-[family-name:var(--font-body)] text-[var(--text-caption)] font-medium tracking-[0.04em] uppercase text-[var(--color-text-secondary)]">
-                Email
-              </label>
-              <input
-                id="email"
-                type="email"
-                name="email"
-                required
-                placeholder="you@firm.com"
-                autoComplete="email"
-                className="w-full bg-transparent text-[var(--color-text-primary)] font-[family-name:var(--font-mono)] text-[var(--text-body)] leading-[var(--text-body-lh)] border border-[var(--color-divider)] rounded-[var(--radius-input)] px-[var(--space-16)] py-[var(--space-12)] outline-2 outline-transparent outline-offset-1 transition-all duration-150 ease-[var(--ease-out)] focus-visible:border-[var(--color-accent)] focus-visible:outline-[var(--color-focus)] placeholder:text-[var(--color-text-secondary)] placeholder:opacity-50"
-              />
-            </div>
-
-            <div className="flex flex-col gap-[var(--space-8)] mb-[var(--space-24)]">
-              <label htmlFor="aum" className="font-[family-name:var(--font-body)] text-[var(--text-caption)] font-medium tracking-[0.04em] uppercase text-[var(--color-text-secondary)]">
-                Assets Under Management
-              </label>
-              <select
-                id="aum"
-                name="aum"
-                required
-                defaultValue=""
-                className="w-full bg-transparent text-[var(--color-text-primary)] font-[family-name:var(--font-mono)] text-[var(--text-body)] leading-[var(--text-body-lh)] border border-[var(--color-divider)] rounded-[var(--radius-input)] px-[var(--space-16)] py-[var(--space-12)] outline-2 outline-transparent outline-offset-1 transition-all duration-150 ease-[var(--ease-out)] focus-visible:border-[var(--color-accent)] focus-visible:outline-[var(--color-focus)]"
+          {status === "success" ? (
+            <div className="flex flex-col gap-[var(--space-16)]">
+              <span className="thesis-eyebrow">Access Request</span>
+              <p
+                className="font-[family-name:var(--font-body)] text-[var(--text-display)] leading-[var(--text-display-lh)] font-[var(--text-display-weight)] text-[var(--color-success)]"
+                role="status"
               >
-                <option value="" disabled>Select range</option>
-                <option value="$0–$50M">$0–$50M</option>
-                <option value="$50M–$250M">$50M–$250M</option>
-                <option value="$250M–$1B">$250M–$1B</option>
-                <option value="$1B+">$1B+</option>
-              </select>
-            </div>
-
-            <div className="flex flex-col gap-[var(--space-8)] mb-[var(--space-24)]">
-              <label htmlFor="message" className="font-[family-name:var(--font-body)] text-[var(--text-caption)] font-medium tracking-[0.04em] uppercase text-[var(--color-text-secondary)]">
-                Message (optional)
-              </label>
-              <textarea
-                id="message"
-                name="message"
-                rows={4}
-                placeholder="Describe your interest or ask a specific question."
-                className="w-full bg-transparent text-[var(--color-text-primary)] font-[family-name:var(--font-mono)] text-[var(--text-body)] leading-[var(--text-body-lh)] border border-[var(--color-divider)] rounded-[var(--radius-input)] px-[var(--space-16)] py-[var(--space-12)] outline-2 outline-transparent outline-offset-1 transition-all duration-150 ease-[var(--ease-out)] focus-visible:border-[var(--color-accent)] focus-visible:outline-[var(--color-focus)] placeholder:text-[var(--color-text-secondary)] placeholder:opacity-50"
-              />
-            </div>
-
-            <button
-              type="submit"
-              disabled={status === "submitting" || status === "success"}
-              aria-disabled={status === "submitting" || status === "success"}
-              className="btn-primary"
-            >
-              {buttonText[status]}
-            </button>
-
-            {status === "success" && (
-              <p className="font-[family-name:var(--font-body)] text-[var(--text-caption)] text-[var(--color-accent)] mt-[var(--space-16)]">
-                Your request has been received. We will be in touch within 2 business days.
+                Received. Zac will be in touch.
               </p>
-            )}
-
-            {status === "error" && (
-              <p className="font-[family-name:var(--font-body)] text-[var(--text-caption)] text-[var(--color-error,#C0392B)] mt-[var(--space-16)]">
-                Something went wrong. Please try again or email us directly.
+            </div>
+          ) : (
+            <>
+              <span className="thesis-eyebrow">Access Request</span>
+              <h2 className="thesis-heading">Allocation Inquiry</h2>
+              <p className="form-lede">
+                AEGIS II is not publicly available. Access is extended by invitation or direct application. Complete the form below to initiate a review.
               </p>
-            )}
-          </form>
+
+              <form onSubmit={handleSubmit} className="flex flex-col">
+                {/* Full Name */}
+                <div className="flex flex-col gap-[var(--space-8)] mb-[var(--space-24)]">
+                  <label htmlFor="name" className={labelClass}>
+                    Full Name
+                  </label>
+                  <input
+                    id="name"
+                    type="text"
+                    name="name"
+                    required
+                    placeholder="Jane Smith"
+                    className={inputClass}
+                    disabled={status === "submitting"}
+                  />
+                </div>
+
+                {/* Institutional Affiliation */}
+                <div className="flex flex-col gap-[var(--space-8)] mb-[var(--space-24)]">
+                  <label htmlFor="organization" className={labelClass}>
+                    Institutional Affiliation
+                  </label>
+                  <input
+                    id="organization"
+                    type="text"
+                    name="organization"
+                    required
+                    placeholder="Firm or institution name"
+                    className={inputClass}
+                    disabled={status === "submitting"}
+                  />
+                </div>
+
+                {/* Role/Title */}
+                <div className="flex flex-col gap-[var(--space-8)] mb-[var(--space-24)]">
+                  <label htmlFor="role" className={labelClass}>
+                    Role/Title
+                  </label>
+                  <input
+                    id="role"
+                    type="text"
+                    name="role"
+                    required
+                    placeholder="Managing Partner, CIO, etc."
+                    className={inputClass}
+                    disabled={status === "submitting"}
+                  />
+                </div>
+
+                {/* Email Address */}
+                <div className="flex flex-col gap-[var(--space-8)] mb-[var(--space-24)]">
+                  <label htmlFor="email" className={labelClass}>
+                    Email Address
+                  </label>
+                  <input
+                    id="email"
+                    type="email"
+                    name="email"
+                    required
+                    placeholder="jane@institution.com"
+                    className={inputClass}
+                    disabled={status === "submitting"}
+                  />
+                </div>
+
+                {/* Optional Message */}
+                <div className="flex flex-col gap-[var(--space-8)] mb-[var(--space-48)]">
+                  <label htmlFor="message" className={labelClass}>
+                    Optional Message
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows={4}
+                    placeholder="Any context you would like to share"
+                    className={`${inputClass} resize-none`}
+                    disabled={status === "submitting"}
+                  />
+                </div>
+
+                {status === "error" && (
+                  <p
+                    className="font-[family-name:var(--font-mono)] text-[var(--text-mono)] text-red-400 mb-[var(--space-16)]"
+                    role="alert"
+                  >
+                    Submission failed. Please try again.
+                  </p>
+                )}
+
+                <button
+                  type="submit"
+                  className="btn-primary self-start"
+                  disabled={status === "submitting"}
+                >
+                  {buttonText[status]}
+                </button>
+              </form>
+            </>
+          )}
         </motion.div>
       </div>
     </section>

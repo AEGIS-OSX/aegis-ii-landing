@@ -2,24 +2,22 @@
 
 import { motion } from "framer-motion";
 
-/**
- * OperationalMetrics Component
- * Displays real-time fleet data in a Bloomberg-style ticker.
- * Uses Berkeley Mono for data and Söhne for labels.
- */
 export default function OperationalMetrics() {
   return (
-    <section className="metrics-section bg-[var(--color-surface-1)] py-[var(--space-24)] border-t border-[var(--color-divider)] border-b border-[var(--color-divider)] overflow-hidden">
+    <section
+      className="metrics-section bg-[var(--color-surface-1)] py-[var(--space-24)] border-t border-[var(--color-divider)] border-b border-[var(--color-divider)] overflow-hidden"
+      aria-label="Fleet operational metrics"
+    >
       <div className="container mx-auto px-4">
-        <motion.div 
+        <motion.div
           className="metrics-inner flex flex-row items-center gap-[var(--space-48)] overflow-x-auto scrollbar-none"
-          initial={{ opacity: 0 }} 
-          whileInView={{ opacity: 1 }} 
-          viewport={{ once: true, margin: "-60px" }} 
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-          style={{ 
-            msOverflowStyle: "none", 
-            scrollbarWidth: "none" 
+          style={{
+            msOverflowStyle: "none",
+            scrollbarWidth: "none",
           }}
         >
           <style jsx>{`
@@ -27,8 +25,13 @@ export default function OperationalMetrics() {
               display: none;
             }
             @keyframes blink {
-              0%, 100% { opacity: 1; }
-              50% { opacity: 0; }
+              0%,
+              100% {
+                opacity: 1;
+              }
+              50% {
+                opacity: 0;
+              }
             }
             .metrics-cursor {
               animation: blink 1.2s step-end infinite;
@@ -48,7 +51,7 @@ export default function OperationalMetrics() {
               }
             }
           `}</style>
-          
+
           <span className="metrics-label font-[family-name:var(--font-body)] text-[var(--text-caption)] font-normal tracking-[0.08em] uppercase text-[var(--color-text-secondary)] whitespace-nowrap shrink-0">
             FLEET STATUS
           </span>
@@ -57,20 +60,35 @@ export default function OperationalMetrics() {
             <span className="mono-data font-[family-name:var(--font-mono)] text-[var(--text-mono)] text-[var(--color-accent)] whitespace-nowrap">
               TASKS_COMPLETED: 14,822
             </span>
-            <span className="metrics-sep font-[family-name:var(--font-mono)] text-[var(--text-mono)] text-[var(--color-divider)] select-none">
+            <span
+              className="metrics-sep font-[family-name:var(--font-mono)] text-[var(--text-mono)] text-[var(--color-divider)] select-none"
+              aria-hidden="true"
+            >
               |
             </span>
             <span className="mono-data font-[family-name:var(--font-mono)] text-[var(--text-mono)] text-[var(--color-accent)] whitespace-nowrap">
               UPTIME: 99.99%
             </span>
-            <span className="metrics-sep font-[family-name:var(--font-mono)] text-[var(--text-mono)] text-[var(--color-accent)] opacity-20 select-none">
+            <span
+              className="metrics-sep font-[family-name:var(--font-mono)] text-[var(--text-mono)] text-[var(--color-divider)] select-none"
+              aria-hidden="true"
+            >
               |
             </span>
             <span className="mono-data font-[family-name:var(--font-mono)] text-[var(--text-mono)] text-[var(--color-accent)] whitespace-nowrap">
               LATENCY: &lt;200ms
             </span>
-            <span className="metrics-cursor font-[family-name:var(--font-mono)] text-[var(--text-mono)] text-[var(--color-accent)]" aria-hidden="true">
-              █
+            <span
+              className="metrics-sep font-[family-name:var(--font-mono)] text-[var(--text-mono)] text-[var(--color-divider)] select-none"
+              aria-hidden="true"
+            >
+              |
+            </span>
+            <span
+              className="metrics-cursor font-[family-name:var(--font-mono)] text-[var(--text-mono)] text-[var(--color-accent)] select-none"
+              aria-hidden="true"
+            >
+              ▋
             </span>
           </div>
         </motion.div>

@@ -4,10 +4,10 @@ export default function ComplianceFooter() {
       <div className="container">
         <div className="footer-inner">
           <p className="footer-legal">
-            &copy; 2026 ZRS Enterprises. All rights reserved. This page is for informational purposes only and does not constitute an offer to sell or a solicitation of an offer to buy any security.
+            This document is for informational purposes only and does not constitute an offer to sell or a solicitation of an offer to buy any securities. Any such offer will be made only by means of a confidential private placement memorandum and only to qualified institutional investors in jurisdictions where permitted by law.
           </p>
-          <a href="mailto:access@aegis.zrs.io" className="footer-contact">
-            access@aegis.zrs.io
+          <a href="mailto:inquiries@aegisos.cc" className="footer-contact">
+            inquiries@aegisos.cc
           </a>
         </div>
       </div>
