@@ -33,7 +33,7 @@ export default function StructuralThesis() {
               AEGIS II is not a fund, a consultancy, or a software wrapper. It is a fully autonomous enterprise. While traditional firms rely on manual oversight and relationship-heavy processes, AEGIS II operates through a coordinated fleet of 36 specialized agents. This is the first instance of a business where the execution layer is entirely software-defined.
             </p>
             <p className="font-[family-name:var(--font-body)] text-[var(--text-body)] leading-[var(--text-body-lh)] text-[var(--color-text-secondary)] m-0 mt-[var(--space-24)]">
-              Accountability is structural. Every decision, from capital allocation to operational pivot, is logged, versioned, and auditable. There is no principal-agent problem because there is no human principal in the execution chain.
+              Accountability is structural. Every decision, from capital allocation to operational pivot, is logged with cryptographic precision. By removing human operators from the execution loop, we eliminate the friction, bias, and latency inherent in legacy institutional models.
             </p>
           </div>
           <div className="w-full">
@@ -68,10 +68,22 @@ export default function StructuralThesis() {
               Coordinated Autonomy at Scale
             </h2>
             <p className="font-[family-name:var(--font-body)] text-[var(--text-body)] leading-[var(--text-body-lh)] text-[var(--color-text-secondary)] m-0">
-              The fleet operates across six functional divisions: Strategy, Creative, Engineering, Finance, Legal, and Operations. Each division is staffed by specialized agents with defined scopes, escalation paths, and inter-agent communication protocols.
+              01 / Autonomous Decomposition. Every high-level objective is broken into atomic tasks and routed to the optimal agent for immediate execution.
+            </p>
+            <p className="font-[family-name:var(--font-mono)] text-[14px] leading-[1.4] tracking-[0.02em] text-[var(--color-accent)] m-0 mt-[var(--space-8)]">
+              Avg. routing latency: &lt;50ms
             </p>
             <p className="font-[family-name:var(--font-body)] text-[var(--text-body)] leading-[var(--text-body-lh)] text-[var(--color-text-secondary)] m-0 mt-[var(--space-24)]">
-              Work flows through a structured pipeline: brief intake, decomposition, parallel execution, quality control, and delivery. No task leaves the system without passing automated acceptance criteria. Human intervention is reserved for strategic direction — not execution.
+              02 / Real-time Governance. A dedicated layer of auditor bots monitors every fleet action against pre-defined risk parameters and institutional constraints.
+            </p>
+            <p className="font-[family-name:var(--font-mono)] text-[14px] leading-[1.4] tracking-[0.02em] text-[var(--color-accent)] m-0 mt-[var(--space-8)]">
+              Audit coverage: 100% of operations
+            </p>
+            <p className="font-[family-name:var(--font-body)] text-[var(--text-body)] leading-[var(--text-body-lh)] text-[var(--color-text-secondary)] m-0 mt-[var(--space-24)]">
+              03 / Continuous Optimization. The fleet self-corrects based on live performance data, reallocating compute and focus to the highest-impact workstreams.
+            </p>
+            <p className="font-[family-name:var(--font-mono)] text-[14px] leading-[1.4] tracking-[0.02em] text-[var(--color-accent)] m-0 mt-[var(--space-8)]">
+              System uptime: 99.99%
             </p>
           </div>
         </motion.div>
@@ -94,10 +106,10 @@ export default function StructuralThesis() {
               Structural Differentiation, Not Incremental Improvement
             </h2>
             <p className="font-[family-name:var(--font-body)] text-[var(--text-body)] leading-[var(--text-body-lh)] text-[var(--color-text-secondary)] m-0">
-              Most AI deployments are augmentation plays — a human workflow with an AI layer on top. AEGIS II is a replacement architecture. The enterprise itself is the product. Investors are not buying access to a tool; they are acquiring exposure to a new class of productive asset.
+              Incumbent models at firms like BlackRock or State Street are structurally limited by human overhead. Their &quot;transparency&quot; is a retrospective report delivered weeks after the fact. AEGIS II provides algorithmic transparency: a real-time window into a system that executes at a velocity human-led teams cannot match.
             </p>
             <p className="font-[family-name:var(--font-body)] text-[var(--text-body)] leading-[var(--text-body-lh)] text-[var(--color-text-secondary)] m-0 mt-[var(--space-24)]">
-              The moat is not the technology. The technology is commoditizing. The moat is the operating system: the agent coordination layer, the quality control infrastructure, and the institutional knowledge graph that compounds with every project.
+              This is a new category of exposure. By investing in autonomous execution, allocators gain access to a vehicle that scales without linear increases in headcount or complexity. It is the transition from managed assets to autonomous assets.
             </p>
           </div>
           <div className="w-full">
