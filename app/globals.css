@@ -198,3 +198,52 @@ html {
   cursor: not-allowed;
   pointer-events: none;
 }
+
+/* ── Compliance Footer ── */
+.compliance-footer {
+  background-color: var(--color-canvas);
+  padding-block: var(--space-32);
+  border-top: 1px solid var(--color-divider);
+}
+
+.footer-inner {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-16);
+}
+
+.footer-legal {
+  font-family: var(--font-body);
+  font-size: var(--text-caption);
+  line-height: var(--text-caption-lh);
+  color: var(--color-text-secondary);
+  margin: 0;
+  max-width: 640px;
+}
+
+.footer-contact {
+  font-family: var(--font-mono);
+  font-size: var(--text-caption);
+  color: var(--color-accent);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.footer-contact:hover {
+  text-decoration: underline;
+}
+
+.footer-contact:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+@media (max-width: 768px) {
+  .footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
