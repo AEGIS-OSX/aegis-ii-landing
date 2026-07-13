@@ -80,11 +80,7 @@ export default function Hero() {
                   }
             }
           >
-            <ProjectImage
-              id="hero"
-              className="hero-image"
-              fetchpriority="high"
-            />
+            <ProjectImage id="hero" className="hero-image" />
           </motion.div>
         </div>
       </div>
