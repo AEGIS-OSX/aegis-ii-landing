@@ -1,12 +1,12 @@
 "use client";
 
-import { useState } from "react";
+import { useState, FormEvent } from "react";
 import { motion } from "framer-motion";
 
 export default function AccessRequestForm() {
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setStatus("submitting");
 
@@ -41,28 +41,28 @@ export default function AccessRequestForm() {
 
   const buttonText = {
     idle: "Submit Request",
-    submitting: "Submitting...",
+    submitting: "Submitting…",
     success: "Request Received",
     error: "Retry Submission",
   };
 
   return (
-    <section id="access-request" className="bg-[var(--color-surface-1)] py-[var(--space-120)] border-t border-[var(--color-divider)]">
+    <section id="access-request" className="form-section">
       <div className="container">
-        <motion.div 
-          className="max-w-[560px]"
+        <motion.div
+          className="form-inner"
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
         >
-          <span className="font-[family-name:var(--font-body)] text-[var(--text-caption)] font-medium tracking-[0.04em] uppercase color-[var(--color-text-secondary)] block mb-[var(--space-8)]">
+          <span className="thesis-eyebrow">
             Access Request
           </span>
-          <h2 className="font-[family-name:var(--font-display)] text-[var(--text-display)] leading-[var(--text-display-lh)] font-semibold tracking-[var(--text-display-tracking)] text-[var(--color-text-primary)] mb-[var(--space-16)]">
+          <h2 className="thesis-heading">
             Request Institutional Access
           </h2>
-          <p className="font-[family-name:var(--font-body)] text-[var(--text-body)] leading-[var(--text-body-lh)] text-[var(--color-text-secondary)] mt-[var(--space-16)] mb-[var(--space-48)]">
+          <p className="form-lede">
             AEGIS II is not publicly available. Access is extended by invitation or direct application. Complete the form below to initiate a review.
           </p>
 
@@ -113,7 +113,7 @@ export default function AccessRequestForm() {
 
             <div className="flex flex-col gap-[var(--space-8)] mb-[var(--space-24)]">
               <label htmlFor="email" className="font-[family-name:var(--font-body)] text-[var(--text-caption)] font-medium tracking-[0.04em] uppercase text-[var(--color-text-secondary)]">
-                Email Address
+                Email
               </label>
               <input
                 id="email"
@@ -174,7 +174,7 @@ export default function AccessRequestForm() {
             )}
 
             {status === "error" && (
-              <p className="font-[family-name:var(--font-body)] text-[var(--text-caption)] text-[#C0392B] mt-[var(--space-16)]">
+              <p className="font-[family-name:var(--font-body)] text-[var(--text-caption)] text-[var(--color-error,#C0392B)] mt-[var(--space-16)]">
                 Something went wrong. Please try again or email us directly.
               </p>
             )}
