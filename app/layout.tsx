@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'aegis-ii-landing',
-  description: 'AEGIS-generated project',
+  title: 'AEGIS II — Institutional-Grade Autonomous Business OS',
+  description: 'Request access to AEGIS II, the next-generation autonomous business operating system for institutional-grade operations.',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

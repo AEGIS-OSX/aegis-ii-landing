@@ -76,6 +76,7 @@ export default function AccessRequestForm() {
                 type="text"
                 name="name"
                 required
+                maxLength={100}
                 placeholder="First Last"
                 autoComplete="name"
                 className="w-full bg-transparent text-[var(--color-text-primary)] font-[family-name:var(--font-mono)] text-[var(--text-body)] leading-[var(--text-body-lh)] border border-[var(--color-divider)] rounded-[var(--radius-input)] px-[var(--space-16)] py-[var(--space-12)] outline-2 outline-transparent outline-offset-1 transition-all duration-150 ease-[var(--ease-out)] focus-visible:border-[var(--color-accent)] focus-visible:outline-[var(--color-focus)] placeholder:text-[var(--color-text-secondary)] placeholder:opacity-50"
@@ -91,6 +92,7 @@ export default function AccessRequestForm() {
                 type="text"
                 name="organization"
                 required
+                maxLength={100}
                 placeholder="Firm or Institution"
                 autoComplete="organization"
                 className="w-full bg-transparent text-[var(--color-text-primary)] font-[family-name:var(--font-mono)] text-[var(--text-body)] leading-[var(--text-body-lh)] border border-[var(--color-divider)] rounded-[var(--radius-input)] px-[var(--space-16)] py-[var(--space-12)] outline-2 outline-transparent outline-offset-1 transition-all duration-150 ease-[var(--ease-out)] focus-visible:border-[var(--color-accent)] focus-visible:outline-[var(--color-focus)] placeholder:text-[var(--color-text-secondary)] placeholder:opacity-50"
@@ -106,6 +108,7 @@ export default function AccessRequestForm() {
                 type="text"
                 name="role"
                 required
+                maxLength={100}
                 placeholder="e.g. Managing Director, CIO"
                 className="w-full bg-transparent text-[var(--color-text-primary)] font-[family-name:var(--font-mono)] text-[var(--text-body)] leading-[var(--text-body-lh)] border border-[var(--color-divider)] rounded-[var(--radius-input)] px-[var(--space-16)] py-[var(--space-12)] outline-2 outline-transparent outline-offset-1 transition-all duration-150 ease-[var(--ease-out)] focus-visible:border-[var(--color-accent)] focus-visible:outline-[var(--color-focus)] placeholder:text-[var(--color-text-secondary)] placeholder:opacity-50"
               />
@@ -120,6 +123,7 @@ export default function AccessRequestForm() {
                 type="email"
                 name="email"
                 required
+                maxLength={254}
                 placeholder="you@firm.com"
                 autoComplete="email"
                 className="w-full bg-transparent text-[var(--color-text-primary)] font-[family-name:var(--font-mono)] text-[var(--text-body)] leading-[var(--text-body-lh)] border border-[var(--color-divider)] rounded-[var(--radius-input)] px-[var(--space-16)] py-[var(--space-12)] outline-2 outline-transparent outline-offset-1 transition-all duration-150 ease-[var(--ease-out)] focus-visible:border-[var(--color-accent)] focus-visible:outline-[var(--color-focus)] placeholder:text-[var(--color-text-secondary)] placeholder:opacity-50"
@@ -153,6 +157,7 @@ export default function AccessRequestForm() {
                 id="message"
                 name="message"
                 rows={4}
+                maxLength={1000}
                 placeholder="Describe your interest or ask a specific question."
                 className="w-full bg-transparent text-[var(--color-text-primary)] font-[family-name:var(--font-mono)] text-[var(--text-body)] leading-[var(--text-body-lh)] border border-[var(--color-divider)] rounded-[var(--radius-input)] px-[var(--space-16)] py-[var(--space-12)] outline-2 outline-transparent outline-offset-1 transition-all duration-150 ease-[var(--ease-out)] focus-visible:border-[var(--color-accent)] focus-visible:outline-[var(--color-focus)] placeholder:text-[var(--color-text-secondary)] placeholder:opacity-50"
               />
