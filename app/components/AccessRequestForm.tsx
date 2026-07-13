@@ -78,7 +78,7 @@ export default function AccessRequestForm() {
                 required
                 placeholder="First Last"
                 autoComplete="name"
-                className="w-full bg-[var(--color-canvas)] text-[var(--color-text-primary)] font-[family-name:var(--font-body)] text-[var(--text-body)] leading-[var(--text-body-lh)] border border-[var(--color-divider)] rounded-[var(--radius-input)] px-[var(--space-16)] py-[var(--space-12)] outline-2 outline-transparent outline-offset-1 transition-all duration-150 ease-[var(--ease-out)] focus-visible:border-[var(--color-accent)] focus-visible:outline-[var(--color-focus)] placeholder:text-[var(--color-text-secondary)] placeholder:opacity-50"
+                className="w-full bg-transparent text-[var(--color-text-primary)] font-[family-name:var(--font-mono)] text-[var(--text-body)] leading-[var(--text-body-lh)] border border-[var(--color-divider)] rounded-[var(--radius-input)] px-[var(--space-16)] py-[var(--space-12)] outline-2 outline-transparent outline-offset-1 transition-all duration-150 ease-[var(--ease-out)] focus-visible:border-[var(--color-accent)] focus-visible:outline-[var(--color-focus)] placeholder:text-[var(--color-text-secondary)] placeholder:opacity-50"
               />
             </div>
 
@@ -93,7 +93,7 @@ export default function AccessRequestForm() {
                 required
                 placeholder="Firm or Institution"
                 autoComplete="organization"
-                className="w-full bg-[var(--color-canvas)] text-[var(--color-text-primary)] font-[family-name:var(--font-body)] text-[var(--text-body)] leading-[var(--text-body-lh)] border border-[var(--color-divider)] rounded-[var(--radius-input)] px-[var(--space-16)] py-[var(--space-12)] outline-2 outline-transparent outline-offset-1 transition-all duration-150 ease-[var(--ease-out)] focus-visible:border-[var(--color-accent)] focus-visible:outline-[var(--color-focus)] placeholder:text-[var(--color-text-secondary)] placeholder:opacity-50"
+                className="w-full bg-transparent text-[var(--color-text-primary)] font-[family-name:var(--font-mono)] text-[var(--text-body)] leading-[var(--text-body-lh)] border border-[var(--color-divider)] rounded-[var(--radius-input)] px-[var(--space-16)] py-[var(--space-12)] outline-2 outline-transparent outline-offset-1 transition-all duration-150 ease-[var(--ease-out)] focus-visible:border-[var(--color-accent)] focus-visible:outline-[var(--color-focus)] placeholder:text-[var(--color-text-secondary)] placeholder:opacity-50"
               />
             </div>
 
@@ -107,7 +107,7 @@ export default function AccessRequestForm() {
                 name="role"
                 required
                 placeholder="e.g. Managing Director, CIO"
-                className="w-full bg-[var(--color-canvas)] text-[var(--color-text-primary)] font-[family-name:var(--font-body)] text-[var(--text-body)] leading-[var(--text-body-lh)] border border-[var(--color-divider)] rounded-[var(--radius-input)] px-[var(--space-16)] py-[var(--space-12)] outline-2 outline-transparent outline-offset-1 transition-all duration-150 ease-[var(--ease-out)] focus-visible:border-[var(--color-accent)] focus-visible:outline-[var(--color-focus)] placeholder:text-[var(--color-text-secondary)] placeholder:opacity-50"
+                className="w-full bg-transparent text-[var(--color-text-primary)] font-[family-name:var(--font-mono)] text-[var(--text-body)] leading-[var(--text-body-lh)] border border-[var(--color-divider)] rounded-[var(--radius-input)] px-[var(--space-16)] py-[var(--space-12)] outline-2 outline-transparent outline-offset-1 transition-all duration-150 ease-[var(--ease-out)] focus-visible:border-[var(--color-accent)] focus-visible:outline-[var(--color-focus)] placeholder:text-[var(--color-text-secondary)] placeholder:opacity-50"
               />
             </div>
 
@@ -122,7 +122,7 @@ export default function AccessRequestForm() {
                 required
                 placeholder="you@firm.com"
                 autoComplete="email"
-                className="w-full bg-[var(--color-canvas)] text-[var(--color-text-primary)] font-[family-name:var(--font-body)] text-[var(--text-body)] leading-[var(--text-body-lh)] border border-[var(--color-divider)] rounded-[var(--radius-input)] px-[var(--space-16)] py-[var(--space-12)] outline-2 outline-transparent outline-offset-1 transition-all duration-150 ease-[var(--ease-out)] focus-visible:border-[var(--color-accent)] focus-visible:outline-[var(--color-focus)] placeholder:text-[var(--color-text-secondary)] placeholder:opacity-50"
+                className="w-full bg-transparent text-[var(--color-text-primary)] font-[family-name:var(--font-mono)] text-[var(--text-body)] leading-[var(--text-body-lh)] border border-[var(--color-divider)] rounded-[var(--radius-input)] px-[var(--space-16)] py-[var(--space-12)] outline-2 outline-transparent outline-offset-1 transition-all duration-150 ease-[var(--ease-out)] focus-visible:border-[var(--color-accent)] focus-visible:outline-[var(--color-focus)] placeholder:text-[var(--color-text-secondary)] placeholder:opacity-50"
               />
             </div>
 
@@ -135,7 +135,7 @@ export default function AccessRequestForm() {
                 name="aum"
                 required
                 defaultValue=""
-                className="w-full bg-[var(--color-canvas)] text-[var(--color-text-primary)] font-[family-name:var(--font-body)] text-[var(--text-body)] leading-[var(--text-body-lh)] border border-[var(--color-divider)] rounded-[var(--radius-input)] px-[var(--space-16)] py-[var(--space-12)] outline-2 outline-transparent outline-offset-1 transition-all duration-150 ease-[var(--ease-out)] focus-visible:border-[var(--color-accent)] focus-visible:outline-[var(--color-focus)]"
+                className="w-full bg-transparent text-[var(--color-text-primary)] font-[family-name:var(--font-mono)] text-[var(--text-body)] leading-[var(--text-body-lh)] border border-[var(--color-divider)] rounded-[var(--radius-input)] px-[var(--space-16)] py-[var(--space-12)] outline-2 outline-transparent outline-offset-1 transition-all duration-150 ease-[var(--ease-out)] focus-visible:border-[var(--color-accent)] focus-visible:outline-[var(--color-focus)]"
               >
                 <option value="" disabled>Select range</option>
                 <option value="$0–$50M">$0–$50M</option>
@@ -154,7 +154,7 @@ export default function AccessRequestForm() {
                 name="message"
                 rows={4}
                 placeholder="Describe your interest or ask a specific question."
-                className="w-full bg-[var(--color-canvas)] text-[var(--color-text-primary)] font-[family-name:var(--font-body)] text-[var(--text-body)] leading-[var(--text-body-lh)] border border-[var(--color-divider)] rounded-[var(--radius-input)] px-[var(--space-16)] py-[var(--space-12)] outline-2 outline-transparent outline-offset-1 transition-all duration-150 ease-[var(--ease-out)] focus-visible:border-[var(--color-accent)] focus-visible:outline-[var(--color-focus)] placeholder:text-[var(--color-text-secondary)] placeholder:opacity-50"
+                className="w-full bg-transparent text-[var(--color-text-primary)] font-[family-name:var(--font-mono)] text-[var(--text-body)] leading-[var(--text-body-lh)] border border-[var(--color-divider)] rounded-[var(--radius-input)] px-[var(--space-16)] py-[var(--space-12)] outline-2 outline-transparent outline-offset-1 transition-all duration-150 ease-[var(--ease-out)] focus-visible:border-[var(--color-accent)] focus-visible:outline-[var(--color-focus)] placeholder:text-[var(--color-text-secondary)] placeholder:opacity-50"
               />
             </div>
 
