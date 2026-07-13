@@ -44,7 +44,7 @@ export default function StructuralThesis() {
           </div>
         </motion.div>
 
-        <hr className="border-0 h-[1px] bg-[var(--color-divider)]" />
+        <hr className="section-divider" />
 
         {/* Sub-B: How It Works */}
         <motion.div
@@ -70,25 +70,25 @@ export default function StructuralThesis() {
             <p className="font-[family-name:var(--font-body)] text-[var(--text-body)] leading-[var(--text-body-lh)] text-[var(--color-text-secondary)] m-0">
               01 / Autonomous Decomposition. Every high-level objective is broken into atomic tasks and routed to the optimal agent for immediate execution.
             </p>
-            <p className="font-[family-name:var(--font-mono)] text-[var(--text-mono)] leading-[var(--text-mono-lh)] text-[var(--color-accent)] m-0 mt-[var(--space-8)]">
+            <p className="font-[family-name:var(--font-mono)] text-[14px] leading-[1.4] tracking-[0.02em] text-[var(--color-accent)] m-0 mt-[var(--space-8)]">
               Avg. routing latency: &lt;50ms
             </p>
             <p className="font-[family-name:var(--font-body)] text-[var(--text-body)] leading-[var(--text-body-lh)] text-[var(--color-text-secondary)] m-0 mt-[var(--space-24)]">
               02 / Real-time Governance. A dedicated layer of auditor bots monitors every fleet action against pre-defined risk parameters and institutional constraints.
             </p>
-            <p className="font-[family-name:var(--font-mono)] text-[var(--text-mono)] leading-[var(--text-mono-lh)] text-[var(--color-accent)] m-0 mt-[var(--space-8)]">
+            <p className="font-[family-name:var(--font-mono)] text-[14px] leading-[1.4] tracking-[0.02em] text-[var(--color-accent)] m-0 mt-[var(--space-8)]">
               Audit coverage: 100% of operations
             </p>
             <p className="font-[family-name:var(--font-body)] text-[var(--text-body)] leading-[var(--text-body-lh)] text-[var(--color-text-secondary)] m-0 mt-[var(--space-24)]">
               03 / Continuous Optimization. The fleet self-corrects based on live performance data, reallocating compute and focus to the highest-impact workstreams.
             </p>
-            <p className="font-[family-name:var(--font-mono)] text-[var(--text-mono)] leading-[var(--text-mono-lh)] text-[var(--color-accent)] m-0 mt-[var(--space-8)]">
+            <p className="font-[family-name:var(--font-mono)] text-[14px] leading-[1.4] tracking-[0.02em] text-[var(--color-accent)] m-0 mt-[var(--space-8)]">
               System uptime: 99.99%
             </p>
           </div>
         </motion.div>
 
-        <hr className="border-0 h-[1px] bg-[var(--color-divider)]" />
+        <hr className="section-divider" />
 
         {/* Sub-C: Why This Is Different */}
         <motion.div
