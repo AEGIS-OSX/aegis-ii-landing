@@ -1,37 +1,37 @@
 {
   "logo": {
-    "url": "",
-    "alt": "",
+    "url": "https://zkvkbpxrxnfynqqeytke.supabase.co/storage/v1/object/public/marketing-assets/aegis-ii-landing/cleo/1783967379685-logo.png",
+    "alt": "A minimalist, flat vector logo mark for AEGIS II. It features a geometric shield motif with integrated Roman numeral 'II' in burnished amber #C8A96E and warm off-white #F0EEE9 against the #0A0C0F canv",
     "width": 1024,
     "height": 1024
   },
   "hero": {
-    "url": "",
-    "alt": "",
+    "url": "https://zkvkbpxrxnfynqqeytke.supabase.co/storage/v1/object/public/marketing-assets/aegis-ii-landing/cleo/1783967249663-hero.png",
+    "alt": "A high-precision brass instrument on a dark glass surface, utilizing the locked #0A0C0F and #C8A96E palette to signal institutional gravity and operational precision. The composition emphasizes restra",
     "width": 1920,
     "height": 1080
   },
   "feature_1": {
-    "url": "",
-    "alt": "",
+    "url": "https://zkvkbpxrxnfynqqeytke.supabase.co/storage/v1/object/public/marketing-assets/aegis-ii-landing/cleo/1783967240650-feature_1.png",
+    "alt": "A macro shot of a precision-machined brass component with a burnished amber patina, symbolizing structural differentiation and operational precision. The cool lighting and deep shadows align with the ",
     "width": 800,
     "height": 600
   },
   "feature_2": {
-    "url": "",
-    "alt": "",
+    "url": "https://zkvkbpxrxnfynqqeytke.supabase.co/storage/v1/object/public/marketing-assets/aegis-ii-landing/cleo/1783967236121-feature_2.png",
+    "alt": "A macro shot of a machined brass component against a near-black surface, emphasizing structural integrity and mechanical precision to represent the 'autonomous asset class' as a tangible, institutiona",
     "width": 800,
     "height": 600
   },
   "feature_3": {
-    "url": "",
-    "alt": "",
+    "url": "https://zkvkbpxrxnfynqqeytke.supabase.co/storage/v1/object/public/marketing-assets/aegis-ii-landing/cleo/1783967245222-feature_3.png",
+    "alt": "A macro shot of a precision-machined brass component, symbolizing the structural differentiation and mechanical reliability of the AEGIS II autonomous asset class. The burnished amber tones and high-c",
     "width": 800,
     "height": 600
   },
   "social_proof": {
-    "url": "",
-    "alt": "",
+    "url": "https://zkvkbpxrxnfynqqeytke.supabase.co/storage/v1/object/public/marketing-assets/aegis-ii-landing/cleo/1783967501552-social_proof.png",
+    "alt": "A macro shot of a precision-machined brass dial on a dark slate surface, using the locked amber #C8A96E accent to signal mechanical reliability and institutional gravity. The composition uses shallow ",
     "width": 1200,
     "height": 800
   }
