@@ -9,7 +9,11 @@ const supabase =
     : null;
 
 export async function POST(request: Request) {
-  const { name, organization, role, email, aum, message } = await request.json();
+  const { name, organization, role, email, aum, message, website } = await request.json();
+
+  if (website && website.trim() !== "") {
+    return Response.json({}, { status: 200 });
+  }
 
   if (!name || !organization || !role || !email || !aum) {
     return Response.json({ error: "Missing required fields" }, { status: 400 });
@@ -21,12 +25,10 @@ export async function POST(request: Request) {
   }
 
   console.log("[access-request]", {
-    name,
     organization,
     role,
-    email,
     aum,
-    message: message?.slice(0, 100),
+    timestamp: new Date().toISOString(),
   });
 
   if (!supabase) {
