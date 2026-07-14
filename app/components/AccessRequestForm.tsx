@@ -1,185 +1,149 @@
-"use client";
+'use client';
 
-import { useState, FormEvent } from "react";
-import { motion } from "framer-motion";
+import React, { useState, FormEvent } from 'react';
+
+interface FormData {
+  name: string;
+  email: string;
+  company: string;
+  role: string;
+}
+
+type Status = 'idle' | 'submitting' | 'success' | 'error';
 
 export default function AccessRequestForm() {
-  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+  const [formData, setFormData] = useState<FormData>({
+    name: '',
+    email: '',
+    company: '',
+    role: '',
+  });
+  const [status, setStatus] = useState<Status>('idle');
+  const [errorMessage, setErrorMessage] = useState<string>('');
 
-  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    setStatus("submitting");
-
-    const formData = new FormData(e.currentTarget);
-    const data = {
-      name: formData.get("name"),
-      organization: formData.get("organization"),
-      role: formData.get("role"),
-      email: formData.get("email"),
-      message: formData.get("message"),
-    };
+    setStatus('submitting');
+    setErrorMessage('');
 
     try {
-      const response = await fetch("/api/access-request", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
+      const res = await fetch('/api/access-request', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
       });
 
-      if (response.ok) {
-        setStatus("success");
-      } else {
-        setStatus("error");
+      if (!res.ok) {
+        const errorText = await res.text().catch(() => 'Unknown server error');
+        throw new Error(`Submission failed: ${res.status} ${res.statusText}. ${errorText}`);
       }
+
+      setStatus('success');
     } catch (err) {
-      setStatus("error");
+      console.error('Form submission error:', err);
+      const message = err instanceof Error ? err.message : 'An unexpected error occurred. Please try again.';
+      setErrorMessage(message);
+      setStatus('error');
     }
   };
 
-  const buttonText = {
-    idle: "Request Access",
-    submitting: "Submitting\u2026",
-    success: "Received. Zac will be in touch.",
-    error: "Retry Submission",
-  };
-
-  const inputClass =
-    "font-[family-name:var(--font-mono)] text-[var(--text-mono)] text-[var(--color-text-primary)] bg-transparent border border-[var(--color-divider)] rounded-[var(--radius-input)] px-[var(--space-16)] py-[var(--space-12)] w-full focus:outline-none focus:border-[var(--color-accent)] transition-colors duration-200 placeholder:text-[var(--color-text-secondary)]";
-
-  const labelClass =
-    "font-[family-name:var(--font-body)] text-[var(--text-caption)] font-medium tracking-[0.04em] uppercase text-[var(--color-text-secondary)]";
+  if (status === 'success') {
+    return (
+      <div className="rounded-lg border border-green-200 bg-green-50 p-6 text-center">
+        <h3 className="text-lg font-semibold text-green-800">Request Submitted</h3>
+        <p className="mt-2 text-green-700">
+          Thank you. We have received your access request and will respond within two business days.
+        </p>
+      </div>
+    );
+  }
 
   return (
-    <section id="access-request" className="form-section">
-      <div className="container">
-        <motion.div
-          className="form-inner"
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-60px" }}
-          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-        >
-          {status === "success" ? (
-            <div className="flex flex-col gap-[var(--space-16)]">
-              <span className="thesis-eyebrow">Access Request</span>
-              <p
-                className="font-[family-name:var(--font-body)] text-[var(--text-display)] leading-[var(--text-display-lh)] font-[var(--text-display-weight)] text-[var(--color-success)]"
-                role="status"
-              >
-                Received. Zac will be in touch.
-              </p>
-            </div>
-          ) : (
-            <>
-              <span className="thesis-eyebrow">Access Request</span>
-              <h2 className="thesis-heading">Allocation Inquiry</h2>
-              <p className="form-lede">
-                AEGIS II is not publicly available. Access is extended by invitation or direct application. Complete the form below to initiate a review.
-              </p>
-
-              <form onSubmit={handleSubmit} className="flex flex-col">
-                {/* Full Name */}
-                <div className="flex flex-col gap-[var(--space-8)] mb-[var(--space-24)]">
-                  <label htmlFor="name" className={labelClass}>
-                    Full Name
-                  </label>
-                  <input
-                    id="name"
-                    type="text"
-                    name="name"
-                    required
-                    placeholder="Jane Smith"
-                    className={inputClass}
-                    disabled={status === "submitting"}
-                  />
-                </div>
-
-                {/* Institutional Affiliation */}
-                <div className="flex flex-col gap-[var(--space-8)] mb-[var(--space-24)]">
-                  <label htmlFor="organization" className={labelClass}>
-                    Institutional Affiliation
-                  </label>
-                  <input
-                    id="organization"
-                    type="text"
-                    name="organization"
-                    required
-                    placeholder="Firm or institution name"
-                    className={inputClass}
-                    disabled={status === "submitting"}
-                  />
-                </div>
-
-                {/* Role/Title */}
-                <div className="flex flex-col gap-[var(--space-8)] mb-[var(--space-24)]">
-                  <label htmlFor="role" className={labelClass}>
-                    Role/Title
-                  </label>
-                  <input
-                    id="role"
-                    type="text"
-                    name="role"
-                    required
-                    placeholder="Managing Partner, CIO, etc."
-                    className={inputClass}
-                    disabled={status === "submitting"}
-                  />
-                </div>
-
-                {/* Email Address */}
-                <div className="flex flex-col gap-[var(--space-8)] mb-[var(--space-24)]">
-                  <label htmlFor="email" className={labelClass}>
-                    Email Address
-                  </label>
-                  <input
-                    id="email"
-                    type="email"
-                    name="email"
-                    required
-                    placeholder="jane@institution.com"
-                    className={inputClass}
-                    disabled={status === "submitting"}
-                  />
-                </div>
-
-                {/* Optional Message */}
-                <div className="flex flex-col gap-[var(--space-8)] mb-[var(--space-48)]">
-                  <label htmlFor="message" className={labelClass}>
-                    Optional Message
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    rows={4}
-                    placeholder="Any context you would like to share"
-                    className={`${inputClass} resize-none`}
-                    disabled={status === "submitting"}
-                  />
-                </div>
-
-                {status === "error" && (
-                  <p
-                    className="font-[family-name:var(--font-mono)] text-[var(--text-mono)] text-red-400 mb-[var(--space-16)]"
-                    role="alert"
-                  >
-                    Submission failed. Please try again.
-                  </p>
-                )}
-
-                <button
-                  type="submit"
-                  className="btn-primary self-start"
-                  disabled={status === "submitting"}
-                >
-                  {buttonText[status]}
-                </button>
-              </form>
-            </>
-          )}
-        </motion.div>
+    <form onSubmit={handleSubmit} className="space-y-4" noValidate>
+      <div>
+        <label htmlFor="name" className="block text-sm font-medium text-gray-700">
+          Full Name
+        </label>
+        <input
+          id="name"
+          name="name"
+          type="text"
+          required
+          value={formData.name}
+          onChange={handleChange}
+          className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500"
+        />
       </div>
-    </section>
+
+      <div>
+        <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+          Email Address
+        </label>
+        <input
+          id="email"
+          name="email"
+          type="email"
+          required
+          value={formData.email}
+          onChange={handleChange}
+          className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500"
+        />
+      </div>
+
+      <div>
+        <label htmlFor="company" className="block text-sm font-medium text-gray-700">
+          Organization
+        </label>
+        <input
+          id="company"
+          name="company"
+          type="text"
+          required
+          value={formData.company}
+          onChange={handleChange}
+          className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500"
+        />
+      </div>
+
+      <div>
+        <label htmlFor="role" className="block text-sm font-medium text-gray-700">
+          Role
+        </label>
+        <select
+          id="role"
+          name="role"
+          required
+          value={formData.role}
+          onChange={handleChange}
+          className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500"
+        >
+          <option value="">Select a role</option>
+          <option value="executive">Executive</option>
+          <option value="operations">Operations</option>
+          <option value="engineering">Engineering</option>
+          <option value="security">Security</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+
+      {status === 'error' && errorMessage && (
+        <div className="rounded-md bg-red-50 p-3 text-sm text-red-700" role="alert">
+          {errorMessage}
+        </div>
+      )}
+
+      <button
+        type="submit"
+        disabled={status === 'submitting'}
+        className="w-full rounded-md bg-indigo-600 px-4 py-2 text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed"
+      >
+        {status === 'submitting' ? 'Submitting...' : 'Request Access'}
+      </button>
+    </form>
   );
 }
