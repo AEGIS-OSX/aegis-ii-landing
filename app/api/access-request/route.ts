@@ -9,19 +9,14 @@ const supabase =
     : null;
 
 export async function POST(request: Request) {
-  const { name, organization, role, email, aum, message, website } =
-    await request.json();
+  const { name, organization, role, email, aum, message, website } = await request.json();
 
-  // Honeypot: silently drop bot submissions
-  if (website && typeof website === "string" && website.trim().length > 0) {
+  if (website && website.trim() !== "") {
     return Response.json({}, { status: 200 });
   }
 
   if (!name || !organization || !role || !email || !aum) {
-    return Response.json(
-      { error: "Missing required fields" },
-      { status: 400 }
-    );
+    return Response.json({ error: "Missing required fields" }, { status: 400 });
   }
 
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
