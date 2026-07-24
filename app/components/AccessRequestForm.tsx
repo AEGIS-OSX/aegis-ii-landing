@@ -45,7 +45,7 @@ export default function AccessRequestForm() {
 
       setStatus('success');
     } catch (err) {
-      console.error('Form submission error:', err);
+      console.error('Form submission failure [not-on-page-probe]:', err);
       const message = err instanceof Error ? err.message : 'An unexpected error occurred. Please try again.';
       setErrorMessage(message);
       setStatus('error');
