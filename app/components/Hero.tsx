@@ -50,7 +50,7 @@ export default function Hero() {
               </motion.div>
               <motion.div variants={itemVariants}>
                 <h1 className="hero-headline">
-                  The First Autonomous Asset Class for Institutions
+                  The First Autonomous Asset Class
                 </h1>
               </motion.div>
               <motion.div variants={itemVariants} className="hero-subhead-wrap">
